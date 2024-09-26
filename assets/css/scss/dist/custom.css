@@ -19,7 +19,7 @@
   max-width: calc(100vw - 85%);
   min-width: fit-content;
   height: 100vh;
-  padding: 7.4% 20px;
+  padding: 100px 20px;
   border-radius: 0px 25px 0px 0px;
   background: var(--color-box);
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
@@ -29,6 +29,7 @@
   z-index: 100;
 }
 #app header .profile {
+  padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,8 +53,7 @@
 #app header ul[role=menu] {
   display: flex;
   flex-direction: column;
-  gap: 2.5%;
-  width: 100%;
+  gap: 20px;
 }
 #app header ul[role=menu] li {
   width: 100%;
@@ -63,9 +63,9 @@
   align-items: center;
 }
 #app header ul[role=menu] li button {
-  width: 85%;
   min-width: max-content;
-  padding: 10px 20px;
+  width: 85%;
+  padding: 10px 30px;
   height: 60%;
   border-radius: 25px;
   font-weight: 700;
@@ -108,7 +108,7 @@
   max-width: 0;
   height: 100vh;
   background: rgba(0, 0, 0, 0.3);
-  padding: 7.4%;
+  padding: 120px 40px;
   left: -200%;
   backdrop-filter: blur(5px);
   transition: max-width 0.5s linear, left 0.8s linear;
