@@ -88,18 +88,18 @@
 #app main {
   width: 100%;
   position: relative;
-  background: url("/assets/images/bg.jpeg") center/cover;
-  mix-blend-mode: luminosity;
+  background: url("/assets/images/bg.jpeg") #444b43 center/cover;
+  background-blend-mode: luminosity;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 #app main h1 {
-  color: var(--color-text);
+  color: var(--color-primary);
   font-size: 80px;
   background-clip: text;
   -webkit-background-clip: text;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: difference;
   text-align: center;
 }
 #app main section {
@@ -117,4 +117,11 @@
   max-width: 100%;
   left: 0;
   z-index: 10;
+}
+#app main section .sec__tit {
+  font-size: 40px;
+}
+#app main section .cont {
+  border: 1px solid red;
+  mix-blend-mode: color;
 }
