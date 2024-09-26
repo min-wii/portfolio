@@ -1,0 +1,120 @@
+:root {
+  --color-bg: #0f1a11;
+  --color-box: #3b4a44;
+  --color-border: #4a5157;
+  --color-primary: #d79553;
+  --color-text: #f2fafc;
+}
+
+#app {
+  position: relative;
+  display: flex;
+  color: var(--color-text);
+  background: var(--color-bg);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+#app header {
+  max-width: calc(100vw - 85%);
+  min-width: fit-content;
+  height: 100vh;
+  padding: 20px;
+  border-radius: 0px 25px 0px 0px;
+  background: var(--color-box);
+  filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+  z-index: 100;
+}
+#app header .profile {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header .profile .frame {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid var(--color-border);
+  overflow: hidden;
+  background: var(--color-primary);
+  filter: drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.9)) drop-shadow(1px 3px 5px black);
+  cursor: pointer;
+}
+#app header .profile .frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 15px center;
+}
+#app header ul[role=menu] {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#app header ul[role=menu] li {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app header ul[role=menu] li button {
+  min-width: max-content;
+  width: 85%;
+  padding: 10px 30px;
+  height: 60%;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 26px;
+  background: #3b4a44;
+  color: #688074;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8), -2px -2px 2px rgba(255, 255, 255, 0.8);
+  filter: drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.5)) drop-shadow(1px 3px 5px black);
+  transition: all 0.3s ease;
+}
+#app header ul[role=menu] li button:hover {
+  text-shadow: -1px 0px 1px black, 0px 0px 1px white;
+  filter: drop-shadow(0px 2px 1px rgba(255, 255, 255, 0.2)) drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.8));
+}
+#app header ul[role=menu] li button.active {
+  text-shadow: -2px 0px 1px black, 1px 0px 1px white;
+  filter: drop-shadow(0px 2px 1px rgba(255, 255, 255, 0.5)) drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.8));
+}
+#app main {
+  width: 100%;
+  position: relative;
+  background: url("/assets/images/bg.jpeg") center/cover;
+  mix-blend-mode: luminosity;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app main h1 {
+  color: var(--color-text);
+  font-size: 80px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  mix-blend-mode: soft-light;
+  text-align: center;
+}
+#app main section {
+  position: absolute;
+  width: 100%;
+  max-width: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  left: -200%;
+  backdrop-filter: blur(5px);
+  transition: max-width 0.5s linear, left 0.8s linear;
+}
+#app main section.active {
+  max-width: 100%;
+  left: 0;
+  z-index: 10;
+}
