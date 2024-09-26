@@ -107,10 +107,10 @@
   width: 100%;
   max-width: 0;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
   padding: 120px 40px;
   left: -200%;
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
   transition: max-width 0.5s linear, left 0.8s linear;
 }
 #app main section.active {
