@@ -3,7 +3,8 @@
   --color-box: #3b4a44;
   --color-border: #4a5157;
   --color-primary: #d79553;
-  --color-text: #ffa64d;
+  --color-text-title: #fdb46a;
+  --color-text-content: #fff8f2;
 }
 
 #app {
@@ -14,6 +15,7 @@
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  font-family: "Pretendard";
 }
 #app header {
   max-width: calc(100vw - 85%);
@@ -108,7 +110,7 @@
   max-width: 0;
   height: 100vh;
   left: -200%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   transition: max-width 0.8s linear, left 0.8s linear;
   display: flex;
 }
@@ -125,7 +127,7 @@
 }
 #app main section .sec__tit {
   font-size: 40px;
-  color: var(--color-text);
+  color: var(--color-text-title);
 }
 #app main section .cont {
   width: 100%;
@@ -174,108 +176,88 @@
   color: var(--color-primary);
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
 }
+#app main section.section--about .cont {
+  color: var(--color-text-content);
+}
 #app main section.section--about .cont .intro {
   margin-top: 20px;
 }
 #app main section.section--about .cont .img-brain {
   width: 30%;
-  height: 30%;
+  min-width: 400px;
+  height: 40%;
+  min-height: 400px;
   position: absolute;
-  inset: 50% auto auto 50%;
+  inset: 50%;
+  border-radius: 15px;
   transform: translate(-50%, -50%);
+  background: rgba(215, 149, 83, 0.5);
 }
 #app main section.section--about .cont .img-brain img {
+  border-radius: 15px;
   width: 100%;
   height: 100%;
-  mix-blend-mode: soft-light;
+  mix-blend-mode: color-burn;
   object-fit: cover;
+}
+#app main section.section--about .cont .img-brain ul {
+  position: absolute;
+  inset: 0 0;
 }
 #app main section.section--about .cont .img-brain ul li {
   position: absolute;
-  width: 110%;
+  width: auto;
+  min-width: fit-content;
   height: auto;
   border-radius: 10px;
-  padding: 10px;
-  border: 1px solid white;
-}
-#app main section.section--about .cont .img-brain ul li::before {
-  content: "";
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: #f0f0f0;
-  border-radius: 50%;
-  transform: translateY(-50%);
-}
-#app main section.section--about .cont .img-brain ul li::after {
-  content: "";
-  position: absolute;
-  background-color: #f0f0f0;
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(1) {
-  top: -250px;
-  left: calc(100% - 150px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(1)::before {
-  top: calc(100% + 100px);
-  left: -37px;
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(1)::after {
-  top: calc(100% - 5px);
-  left: -10px;
-  width: 1px;
-  height: 110px;
-  transform: rotate(25deg);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(2) {
-  top: 0px;
-  left: calc(-100% - 10px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(2)::before {
-  top: 50px;
-  left: calc(100% + 50px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(2)::after {
-  top: 48px;
-  left: 100%;
-  width: 50px;
-  height: 1px;
-  transform: rotate(0deg);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(3) {
-  top: calc(100% - 80px);
-  left: calc(-100% + 50px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(3)::before {
-  top: 21px;
-  left: calc(100% + 48px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(3)::after {
-  top: 48px;
-  left: calc(100% - 10px);
-  width: 70px;
-  height: 1px;
-  transform: rotate(-45deg);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(4) {
-  top: calc(100% + 50px);
-  left: calc(100% - 80px);
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(4)::before {
-  top: -50px;
-  left: -50px;
-}
-#app main section.section--about .cont .img-brain ul li:nth-of-type(4)::after {
-  top: 48px;
-  left: 0;
-  width: 50px;
-  height: 1px;
-  transform: rotate(0deg);
+  padding: 20px;
+  box-shadow: 2px 2px 8px #688074;
+  transition: all 0.3s linear;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
 }
 #app main section.section--about .cont .img-brain ul li strong {
-  color: var(--color-text);
+  color: var(--color-text-title);
+}
+#app main section.section--about .cont .img-brain ul li strong span {
+  margin-left: 12px;
+}
+#app main section.section--about .cont .img-brain ul li strong span::after {
+  content: "+";
 }
 #app main section.section--about .cont .img-brain ul li p {
-  margin-top: 8px;
+  overflow: hidden;
+  width: 0;
+  max-height: 0;
   font-size: 18px;
+  transition: all 0.3s linear;
+}
+#app main section.section--about .cont .img-brain ul li:hover {
+  width: 80%;
+  box-shadow: 2px 2px 10px #9dc2af;
+}
+#app main section.section--about .cont .img-brain ul li:hover strong span::after {
+  content: "-";
+}
+#app main section.section--about .cont .img-brain ul li:hover p {
+  width: fit-content;
+  max-height: fit-content;
+  display: flex;
+  margin-top: 20px;
+}
+#app main section.section--about .cont .img-brain ul li:nth-of-type(1) {
+  top: 0%;
+  left: -40%;
+}
+#app main section.section--about .cont .img-brain ul li:nth-of-type(2) {
+  top: 40%;
+  left: -60%;
+}
+#app main section.section--about .cont .img-brain ul li:nth-of-type(3) {
+  top: 80%;
+  left: -50%;
+}
+#app main section.section--about .cont .img-brain ul li:nth-of-type(4) {
+  top: 120%;
+  left: -30%;
 }
