@@ -235,7 +235,8 @@
 
             &.section--about {
                 .cont {
-                    color:var(--color-text-content);
+                    color: var(--color-text-content);
+
                     .intro {
                         margin-top: 20px;
                     }
@@ -249,89 +250,102 @@
                         inset: calc(50% + 80px) 50%;
                         border-radius: 15px;
                         transform: translate(-50%, -50%);
-                        background:rgb(215, 149, 83,0.5);
+                        background: rgb(215, 149, 83, 0.5);
+
                         img {
                             border-radius: 15px;
                             width: 100%;
                             height: 100%;
                             mix-blend-mode: color-burn;
-                            // mix-blend-mode: hard-light;
                             object-fit: cover;
+
+                            &.overlay {
+                                position: absolute;
+                                inset: 0;
+                                mix-blend-mode: overlay;
+                            }
                         }
 
                         ul {
-                            position:absolute;
-                            inset:0 0;
+                            position: absolute;
+                            inset: 0 0;
+
                             li {
                                 position: absolute;
-                                width:auto;
+                                width: auto;
                                 min-width: fit-content;
                                 height: auto;
                                 border-radius: 10px;
                                 padding: 20px;
                                 box-shadow: 2px 2px 8px #688074;
-                                transition:all 0.3s linear;
+                                transition: all 0.3s linear;
                                 backdrop-filter: blur(5px);
-                                cursor:pointer;
+                                cursor: pointer;
+
                                 strong {
                                     color: var(--color-text-title);
-                                    span{
-                                        margin-left:12px;
-                                        &::after{
-                                            content:"+"
+
+                                    span {
+                                        margin-left: 12px;
+
+                                        &::after {
+                                            content: "+"
                                         }
                                     }
                                 }
 
                                 p {
                                     overflow: hidden;
-                                    width:0;
+                                    width: 0;
                                     max-height: 0;
                                     font-size: 18px;
-                                    transition:all 0.3s linear;
+                                    transition: all 0.3s linear;
                                 }
-                                &:hover{
-                                    width:80%;
+
+                                &:hover {
+                                    width: 80%;
                                     box-shadow: 2px 2px 10px #9dc2af;
-                                    strong{
-                                        span::after{
-                                            content:'-'
+
+                                    strong {
+                                        span::after {
+                                            content: '-'
                                         }
                                     }
-                                    p{
-                                       width:fit-content;
-                                      max-height: fit-content;
-                                      display:flex;
-                                      margin-top: 20px;
+
+                                    p {
+                                        width: fit-content;
+                                        max-height: fit-content;
+                                        display: flex;
+                                        margin-top: 20px;
                                     }
                                 }
 
                                 &:nth-of-type(1) {
-                                    top: 0%;
+                                    top: -5%;
                                     left: -40%;
                                 }
 
                                 &:nth-of-type(2) {
-                                    top: 30%;
+                                    top: 25%;
                                     left: -60%;
 
                                 }
 
                                 &:nth-of-type(3) {
-                                    top:60%;
+                                    top: 55%;
                                     left: -50%;
 
-                                   
+
                                 }
 
                                 &:nth-of-type(4) {
-                                   
-                                    top:90%;
-                                    left:-30%;
-                                   
+
+                                    top: 85%;
+                                    left: -30%;
+
                                 }
 
-                              
+
                             }
                         }
                     }
