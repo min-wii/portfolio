@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --color-bg: #0f1a11;
   --color-box: #3b4a44;
@@ -180,7 +181,30 @@
   color: var(--color-text-content);
 }
 #app main section.section--about .cont .intro {
+  position: relative;
   margin-top: 20px;
+  font-size: 28px;
+  z-index: 10;
+}
+#app main section.section--about .cont .intro span {
+  position: relative;
+  font-weight: 900;
+  width: fit-content;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #fff;
+  overflow: hidden;
+}
+#app main section.section--about .cont .intro span::after {
+  overflow: hidden;
+  display: inline-block;
+  position: absolute;
+  content: "퍼블리셔 민";
+  inset: -2px 0;
+  width: 100%;
+  height: 100%;
+  color: #ffa600;
+  animation: textColor ease-in-out 1.5s infinite running;
 }
 #app main section.section--about .cont .img-brain {
   width: 30%;
@@ -191,13 +215,12 @@
   inset: calc(50% + 80px) 50%;
   border-radius: 15px;
   transform: translate(-50%, -50%);
-  background: rgba(215, 149, 83, 0.5);
 }
 #app main section.section--about .cont .img-brain img {
   border-radius: 15px;
   width: 100%;
   height: 100%;
-  mix-blend-mode: color-burn;
+  mix-blend-mode: darken;
   object-fit: cover;
 }
 #app main section.section--about .cont .img-brain img.overlay {
@@ -265,4 +288,13 @@
 #app main section.section--about .cont .img-brain ul li:nth-of-type(4) {
   top: 85%;
   left: -30%;
+}
+
+@keyframes textColor {
+  0% {
+    width: 0%;
+  }
+  80% {
+    width: 100%;
+  }
 }
