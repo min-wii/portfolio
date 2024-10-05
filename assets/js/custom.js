@@ -1,3 +1,10 @@
+window.addEventListener("load", function() {
+    setTimeout(function() {
+      document.getElementById("loader").style.display = "none";
+      document.getElementById("content").style.display = "block";
+    }, 5000);  // 3000ms = 3초
+  });
+
 const navBtns = document.querySelectorAll('header nav ul li button');
 const sections = document.querySelectorAll('main section');
 const tagBtns = document.querySelectorAll('.sec__tag li');
@@ -28,3 +35,4 @@ navBtns.forEach((btn, indx) => {
         handleNavButtonClick(indx); // 그 후 클릭된 버튼에 맞는 섹션을 활성화
     });
 });
+

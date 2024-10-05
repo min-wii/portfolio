@@ -10,165 +10,198 @@
 </head>
 
 <body>
-    <div id="app">
-        <header>
-            <div class="profile">
-                <div class="frame">
-                    <img src="/assets/images/profile-ai.png" alt="">
-                </div>
-            </div>
-            <nav>
-                <ul role="menu">
-                    <li><button type="button" aria-controls="about">About Me</button></li>
-                    <li><button type="button" aria-controls="skills">Skills</button></li>
-                    <li><button type="button" aria-controls="projects">Projects</button></li>
-                    <li><button type="button" aria-controls="experience">Experience</button></li>
-                    <li><button type="button" aria-controls="contact">Contact</button></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <h1>
-                Portfolio
-            </h1>
-            <section id="about" class="section section--about">
-                <div class="inner">
-                    <h2 class="sec__tit">1. About Me</h2>
-                    <div class="cont">
-                        <p class="intro">
-                            안녕하세요, 저는 <span>퍼블리셔 민</span>입니다. <br>웹의 시각적 요소와 사용자 경험을 중요하게 생각하며, 복잡한 기능을 단순하고 직관적인 인터페이스로 구현하는 데에 큰 흥미를 가지고 있습니다. <br>사용자에게 가치를 제공하는 인터랙티브한 웹 애플리케이션을 만들기 위해 끊임없이 학습하고, 최신 기술을 적극적으로 습득하고 있습니다. <br>Vue.js를 활용한 프로젝트 경험을 쌓고 있으며, 향후에는 더 깊이 있는 기술적 성장을 목표로 삼고 있습니다. <br>창의적 문제 해결과 협업을 통해 실질적인 가치를 창출하는 개발자가 되고자 합니다.
-                        </p>
-                        <div class="img-brain">
-                            <img src="/assets/images/b1.gif" alt="">
-                            <ul>
-                                <li>
-                                    <strong>창의적인 아이디어 발상<span></span></strong>
-                                    <p>
-                                        새로운 아이디어를 빠르게 떠올리고, 다양한 가능성을 탐구하는 데 능숙합니다.<br>프론트엔드 개발에서는 UX/UI 개선, 사용자 경험을 극대화할 혁신적인 디자인이나 기능 구현에 큰 장점을 가집니다. <br>항상 더 나은 방법을 모색하고 창의적인 솔루션을 제시할 수 있습니다.
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>유연한 사고와 적응력<span></span></strong>
-                                    <p>
-                                        새로운 기술을 배우는 데 빠르고, 변화하는 환경에서도 유연하게 적응합니다. <br>웹 기술은 빠르게 변화하는 분야이므로 새로운 프레임워크나 언어를 쉽게 습득하고 적용할 수 있습니다. 
-                                    </p>
-                                </li>
-                                <li>
-                                    <strong>토론과 협업에서의 강점<span></span></strong>
-                                    <p>
-                                        토론을 즐기고 다양한 시각을 받아들이며, 이를 통해 팀원들과의 아이디어 교환이나 브레인스토밍에서 큰 힘을 발휘할 수 있습니다. <br>논리적으로 아이디어를 전달하면서도, 혁신적인 솔루션을 제안하는 능력은 팀에서 중요한 역할을 할 수 있습니다.
-                                    </p>
-                                </li>
-                                <li>
-                                   <strong>세부적인 분석과 큰 틀을 보는 능력<span></span></strong>
-                                   <p>
-                                    집중력과 주의 깊은 분석을 통해 디버깅이나 코드 최적화에서 큰 강점을 발휘합니다. <br>산만한 환경에서도 효율적으로 작업을 처리하고, 심도 있는 연구가 필요한 기술 학습에도 강합니다.
-                                   </p>
-                                </li>
-                            </ul>
-                        </div>
+    <div id="app" class="loading">
+        <div id="loader" class="background">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 196">
+                <g class="bulb">
+                    <path class="bulb__body"
+                        d="M138,86.465c0-22.284-18.131-40.348-40.5-40.348c-22.367,0-40.5,18.064-40.5,40.348c0,13.2,6.363,24.918,16.201,32.279v12.91
+                    c0,1.781,1.449,3.229,3.238,3.229h42.12c1.789,0,3.24-1.445,3.24-3.229v-12.91C131.637,111.384,138,99.665,138,86.465z" />
+                    <g class="bulb__filament">
+                        <path d="M75,89.781v2.427v6.953l13,12.769v22.75" />
+                        <path d="M107,134.68v-22.75l13-12.769v-6.953v-2.427" />
+                        <path class="glow" d="M120,89.802c0,3.003-2.52,5.438-5.625,5.438c-3.107,0-5.625-2.435-5.625-5.438c0,3.003-2.52,5.438-5.625,5.438
+                        c-3.107,0-5.625-2.435-5.625-5.438c0,3.003-2.519,5.438-5.625,5.438s-5.625-2.435-5.625-5.438c0,3.003-2.519,5.438-5.625,5.438
+                        c-3.105,0-5.625-2.435-5.625-5.438" />
+                    </g>
+                    <g class="bulb__socket">
+                        <path d="M119.013,139.598c0,1.803-1.468,3.266-3.276,3.266H79.689c-1.81,0-3.276-1.463-3.276-3.266c0-1.805,1.468-3.267,3.276-3.267h36.046
+                        C117.545,136.331,119.013,137.793,119.013,139.598z" />
+                        <path d="M119.013,146.128c0,1.804-1.468,3.267-3.276,3.267H79.689c-1.81,0-3.276-1.463-3.276-3.267c0-1.804,1.468-3.267,3.276-3.267h36.046
+                        C117.545,142.861,119.013,144.324,119.013,146.128z" />
+                        <path d="M119.013,152.659c0,1.804-1.468,3.267-3.276,3.267H79.689c-1.81,0-3.276-1.463-3.276-3.267c0-1.804,1.468-3.267,3.276-3.267h36.046
+                        C117.545,149.395,119.013,150.855,119.013,152.659z" />
+                        <path d="M119.013,159.191c0,1.803-1.468,3.266-3.276,3.266H79.689c-1.81,0-3.276-1.463-3.276-3.266c0-1.805,1.468-3.267,3.276-3.267h36.046
+                        C117.545,155.926,119.013,157.389,119.013,159.191z" />
+                        <path d="M89.111,168.988c0,4.093,3.851,7.41,8.602,7.41c4.75,0,8.603-3.317,8.603-7.41" />
+                        <path
+                            d="M81.116,162.457v3.266c0,1.805,1.467,3.267,3.275,3.267h4.72h17.203h4.293c1.809,0,3.275-1.464,3.275-3.267v-3.266" />
+                    </g>
+                </g>
+                <g class="bulb--light" style="opacity:1">
+                    <line x1="97.5" y1="18.124" x2="97.5" y2="37.004" />
+                    <line x1="148.765" y1="39.322" x2="135.392" y2="52.672" />
+                    <line x1="151.088" y1="90.5" x2="170" y2="90.5" />
+
+                    <line x1="135.392" y1="128.327" x2="148.765" y2="141.677" />
+
+
+                    <line x1="97.5" y1="143.996" x2="97.5" y2="162.876" />
+
+
+                    <line x1="59.607" y1="128.327" x2="46.234" y2="141.677" />
+                    <line x1="25" y1="90.5" x2="43.912" y2="90.5" />
+
+
+                    <line x1="46.234" y1="39.322" x2="59.607" y2="52.673" />
+
+                </g>
+            </svg>
+        </div>
+        <div id="content" class="wrap">
+            <header>
+                <div class="profile">
+                    <div class="frame">
+                        <img src="/assets/images/profile-ai.png" alt="">
                     </div>
                 </div>
-                <ul class="sec__tag">
-                    <li aria-current="true">Me</li>
-                    <li>Skl</li>
-                    <li>Proj</li>
-                    <li>Exp</li>
-                    <li>Ctc</li>
-                </ul>
-            </section>
-            <section id="skills" class="section section--skills">
-                <div class="inner">
-                    <h2 class="sec__tit">2. Skills</h2>
-                    <div class="cont">
-                        <div class="cont__top">
-                            <p>
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <nav>
+                    <ul role="menu">
+                        <li><button type="button" aria-controls="about">About Me</button></li>
+                        <li><button type="button" aria-controls="skills">Skills</button></li>
+                        <li><button type="button" aria-controls="projects">Projects</button></li>
+                        <li><button type="button" aria-controls="experience">Experience</button></li>
+                        <li><button type="button" aria-controls="contact">Contact</button></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <h1>
+                    Portfolio
+                </h1>
+                <section id="about" class="section section--about">
+                    <div class="inner">
+                        <h2 class="sec__tit">1. About Me</h2>
+                        <div class="cont">
+                            <p class="intro">
+                                안녕하세요, 저는 <span>퍼블리셔 민</span>입니다. <br>웹의 시각적 요소와 사용자 경험을 중요하게 생각하며, 복잡한 기능을 단순하고 직관적인
+                                인터페이스로
+                                구현하는 데에 큰 흥미를 가지고 있습니다. <br>사용자에게 가치를 제공하는 인터랙티브한 웹 애플리케이션을 만들기 위해 끊임없이 학습하고, 최신 기술을
+                                적극적으로
+                                습득하고 있습니다. <br>Vue.js를 활용한 프로젝트 경험을 쌓고 있으며, 향후에는 더 깊이 있는 기술적 성장을 목표로 삼고 있습니다. <br>창의적 문제
+                                해결과
+                                협업을 통해 실질적인 가치를 창출하는 개발자가 되고자 합니다.
                             </p>
-                        </div>
-                        <div class="cont__bot">
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                </div>
-                <ul class="sec__tag">
-                    <li>Me</li>
-                    <li aria-current="true">Skl</li>
-                    <li>Proj</li>
-                    <li>Exp</li>
-                    <li>Ctc</li>
-                </ul>
-            </section>
-            <section id="projects" class="section section--projects">
-                <div class="inner">
-                    <h2 class="sec__tit">3. projects</h2>
-                    <div class="cont">
-                        <div class="cont__left">
-                            <p>
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div class="cont__right">
-                            <img src="" alt="">
-                        </div>
-                    </div>
-                </div>
-                <ul class="sec__tag">
-                    <li>Me</li>
-                    <li>Skl</li>
-                    <li  aria-current="true">Proj</li>
-                    <li>Exp</li>
-                    <li>Ctc</li>
-                </ul>
-            </section>
-            <section id="experience" class="section section--experience">
-                <div class="inner">
-                    <h2 class="sec__tit">4. experience</h2>
-                    <div class="cont">
-                        <div class="cont__left">
-                            <p>
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div class="cont__right">
-                            <img src="" alt="">
+                            <div class="img-brain">
+                                <img src="/assets/images/b1.gif" alt="">
+                                <ul>
+                                    <li>
+                                        <strong>창의적인 아이디어 발상<span></span></strong>
+                                        <p>
+                                            새로운 아이디어를 빠르게 떠올리고, 다양한 가능성을 탐구하는 데 능숙합니다.<br>프론트엔드 개발에서는 UX/UI 개선, 사용자 경험을
+                                            극대화할
+                                            혁신적인 디자인이나 기능 구현에 큰 장점을 가집니다. <br>항상 더 나은 방법을 모색하고 창의적인 솔루션을 제시할 수 있습니다.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <strong>유연한 사고와 적응력<span></span></strong>
+                                        <p>
+                                            새로운 기술을 배우는 데 빠르고, 변화하는 환경에서도 유연하게 적응합니다. <br>웹 기술은 빠르게 변화하는 분야이므로 새로운
+                                            프레임워크나
+                                            언어를 쉽게 습득하고 적용할 수 있습니다.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <strong>토론과 협업에서의 강점<span></span></strong>
+                                        <p>
+                                            토론을 즐기고 다양한 시각을 받아들이며, 이를 통해 팀원들과의 아이디어 교환이나 브레인스토밍에서 큰 힘을 발휘할 수 있습니다.
+                                            <br>논리적으로
+                                            아이디어를 전달하면서도, 혁신적인 솔루션을 제안하는 능력은 팀에서 중요한 역할을 할 수 있습니다.
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <strong>세부적인 분석과 큰 틀을 보는 능력<span></span></strong>
+                                        <p>
+                                            집중력과 주의 깊은 분석을 통해 디버깅이나 코드 최적화에서 큰 강점을 발휘합니다. <br>산만한 환경에서도 효율적으로 작업을 처리하고,
+                                            심도
+                                            있는 연구가 필요한 기술 학습에도 강합니다.
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <ul class="sec__tag">
-                    <li>Me</li>
-                    <li>Skl</li>
-                    <li>Proj</li>
-                    <li aria-current="true">Exp</li>
-                    <li>Ctc</li>
-                </ul>
-            </section>
-            <section id="contact" class="section section--contact">
-                <div class="inner">
-                    <h2 class="sec__tit">5. contact</h2>
-                    <div class="cont">
-                        <div class="cont__left">
-                            <p>
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div class="cont__right">
-                            <img src="" alt="">
+
+                </section>
+                <section id="skills" class="section section--skills">
+                    <div class="inner">
+                        <h2 class="sec__tit">2. Skills</h2>
+                        <div class="cont">
+                            <div class="cont__top">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <div class="cont__bot">
+                                <img src="" alt="">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <ul class="sec__tag">
-                    <li>Me</li>
-                    <li>Skl</li>
-                    <li>Proj</li>
-                    <li>Exp</li>
-                    <li aria-current="true">Ctc</li>
-                </ul>
-            </section>
-            
-        </main>
-        <footer>
-        </footer>
+
+                </section>
+                <section id="projects" class="section section--projects">
+                    <div class="inner">
+                        <h2 class="sec__tit">3. projects</h2>
+                        <div class="cont">
+                            <div class="cont__left">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <div class="cont__right">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section id="experience" class="section section--experience">
+                    <div class="inner">
+                        <h2 class="sec__tit">4. experience</h2>
+                        <div class="cont">
+                            <div class="cont__left">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <div class="cont__right">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+                <section id="contact" class="section section--contact">
+                    <div class="inner">
+                        <h2 class="sec__tit">5. contact</h2>
+                        <div class="cont">
+                            <div class="cont__left">
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                </p>
+                            </div>
+                            <div class="cont__right">
+                                <img src="" alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+            </main>
+            <footer>
+            </footer>
+        </div>
     </div>
 </body>
 

@@ -1,5 +1,11 @@
 "use strict";
 
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("content").style.display = "flex";
+  }, 5000); // 3000ms = 3초
+});
 var navBtns = document.querySelectorAll('header nav ul li button');
 var sections = document.querySelectorAll('main section');
 var tagBtns = document.querySelectorAll('.sec__tag li');

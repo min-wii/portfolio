@@ -18,7 +18,86 @@
   /* Light text for contrast */
 }
 
-#app {
+#app.loading {
+  animation: bgChange1 0.5s 1 ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: both;
+}
+#app .background {
+  animation: bgChange 0.8s 1 ease-in-out;
+  position: absolute;
+  inset: 0 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background: #fff;
+}
+#app .background svg {
+  width: 196px;
+  height: 196px;
+  animation: bulb 0.5s 1 ease-in-out;
+}
+#app .background svg .bulb .bulb__body {
+  fill: none;
+  stroke: #222;
+  stroke-width: 2px;
+}
+#app .background svg .bulb .bulb__filament {
+  fill: none;
+  stroke: #605f5f;
+  stroke-width: 2px;
+  stroke-linecap: square;
+}
+#app .background svg .bulb .bulb__filament .glow {
+  fill: none;
+  stroke-width: 2px;
+  stroke-linecap: square;
+}
+#app .background svg .bulb .bulb__socket path {
+  fill: none;
+  stroke: #222;
+  stroke-width: 2px;
+}
+#app .background svg .bulb .bulb__socket path:nth-child(-n+4) {
+  fill: var(--color-accent);
+}
+#app .background svg .bulb--light line {
+  animation: bulb1 0.3s ease-in-out both;
+  stroke: yellow;
+  opacity: 0;
+  stroke-width: 3px;
+  stroke-linecap: square;
+  transition: all 0.3s ease-in-out;
+}
+#app .background svg .bulb--light line:nth-child(1) {
+  animation-delay: 1s;
+}
+#app .background svg .bulb--light line:nth-child(2) {
+  animation-delay: 1.3s;
+}
+#app .background svg .bulb--light line:nth-child(3) {
+  animation-delay: 1.6s;
+}
+#app .background svg .bulb--light line:nth-child(4) {
+  animation-delay: 1.9s;
+}
+#app .background svg .bulb--light line:nth-child(5) {
+  opacity: 0;
+  display: none;
+}
+#app .background svg .bulb--light line:nth-child(6) {
+  animation-delay: 2.1s;
+}
+#app .background svg .bulb--light line:nth-child(7) {
+  animation-delay: 2.4s;
+}
+#app .background svg .bulb--light line:nth-child(8) {
+  animation-delay: 2.7s;
+}
+#app .wrap {
   position: relative;
   display: flex;
   color: var(--color-primary);
@@ -26,9 +105,10 @@
   height: 100vh;
   overflow: hidden;
   font-family: "Pretendard";
-  background: url("/assets/images/bg-6.png") #444b43 center/cover;
 }
-#app header {
+#app .wrap header {
+  animation: slidein 0.5s cubic-bezier(0.52, 0.02, 0.44, 1.01) backwards;
+  animation-delay: 5.9s;
   max-width: calc(100vw - 85%);
   min-width: fit-content;
   height: 100vh;
@@ -38,16 +118,15 @@
   filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
   display: flex;
   flex-direction: column;
-  gap: 10%;
   z-index: 200;
 }
-#app header .profile {
+#app .wrap header .profile {
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#app header .profile .frame {
+#app .wrap header .profile .frame {
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -58,25 +137,24 @@
   filter: drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.9)) drop-shadow(1px 3px 5px black);
   cursor: pointer;
 }
-#app header .profile .frame img {
+#app .wrap header .profile .frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 15px center;
 }
-#app header ul[role=menu] {
+#app .wrap header ul[role=menu] {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#app header ul[role=menu] li {
+#app .wrap header ul[role=menu] li {
   width: 100%;
-  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#app header ul[role=menu] li button {
+#app .wrap header ul[role=menu] li button {
   min-width: max-content;
   width: 85%;
   padding: 10px 30px;
@@ -91,15 +169,15 @@
   filter: drop-shadow(-1px -1px 1px rgba(255, 255, 255, 0.5)) drop-shadow(1px 3px 5px black);
   transition: all 0.3s ease;
 }
-#app header ul[role=menu] li button:hover {
+#app .wrap header ul[role=menu] li button:hover {
   text-shadow: -3px 0px 2px black, 0px 0px 1px white;
   filter: drop-shadow(0px 2px 1px rgba(255, 255, 255, 0.2)) drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.8));
 }
-#app header ul[role=menu] li button.active {
+#app .wrap header ul[role=menu] li button.active {
   text-shadow: -3px 0px 2px black, 1px 1px 1px white;
   filter: drop-shadow(0px 2px 1px rgba(255, 255, 255, 0.5)) drop-shadow(-1px -1px 1px rgba(0, 0, 0, 0.8));
 }
-#app main {
+#app .wrap main {
   width: 100%;
   position: relative;
   background: url("/assets/images/bg-6.png") #444b43 center/cover;
@@ -108,15 +186,18 @@
   justify-content: center;
   align-items: center;
 }
-#app main h1 {
+#app .wrap main h1 {
   color: var(--color-accent);
   font-size: 80px;
   background-clip: text;
   -webkit-background-clip: text;
-  mix-blend-mode: difference;
+  mix-blend-mode: multiply;
   text-align: center;
+  background: url("/assets/images/bg-6.png") center/cover;
+  animation-delay: 1.2s;
+  animation-fill-mode: both;
 }
-#app main section {
+#app .wrap main section {
   position: absolute;
   width: 100%;
   max-width: 0;
@@ -126,36 +207,36 @@
   transition: max-width 0.8s linear, left 0.8s linear;
   display: flex;
 }
-#app main section.active {
+#app .wrap main section.active {
   max-width: 100%;
   left: 0;
   z-index: 10;
 }
-#app main section .inner {
+#app .wrap main section .inner {
   width: calc(100% - 50px);
   height: 100%;
   background: rgba(255, 255, 255, 0.4);
   padding: 40px;
 }
-#app main section .sec__tit {
+#app .wrap main section .sec__tit {
   font-size: 40px;
   color: var(--color-accent);
 }
-#app main section .cont {
+#app .wrap main section .cont {
   width: 100%;
   height: 100%;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.5;
 }
-#app main section .sec__tag {
+#app .wrap main section .sec__tag {
   position: absolute;
   inset: 0 calc(100% - 50px);
   width: 50px;
   height: fit-content;
   z-index: 100;
 }
-#app main section .sec__tag li {
+#app .wrap main section .sec__tag li {
   background: var(--color-box);
   position: relative;
   writing-mode: vertical-lr;
@@ -171,7 +252,7 @@
   opacity: 0.3;
   color: var(--color-secondary);
 }
-#app main section .sec__tag li::after {
+#app .wrap main section .sec__tag li::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -183,21 +264,21 @@
   border-right: 25px solid #fff;
   border-bottom: 25px solid #fff;
 }
-#app main section .sec__tag li[aria-current=true] {
+#app .wrap main section .sec__tag li[aria-current=true] {
   opacity: 1;
   color: var(--color-text-light);
   text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5);
 }
-#app main section.section--about .cont {
+#app .wrap main section.section--about .cont {
   color: var(--color-text-dark);
 }
-#app main section.section--about .cont .intro {
+#app .wrap main section.section--about .cont .intro {
   position: relative;
   margin-top: 20px;
   font-size: 28px;
   z-index: 10;
 }
-#app main section.section--about .cont .intro span {
+#app .wrap main section.section--about .cont .intro span {
   position: relative;
   font-weight: 900;
   width: fit-content;
@@ -205,7 +286,7 @@
   background-clip: text;
   overflow: hidden;
 }
-#app main section.section--about .cont .intro span::after {
+#app .wrap main section.section--about .cont .intro span::after {
   overflow: hidden;
   display: inline-block;
   position: absolute;
@@ -216,7 +297,7 @@
   color: var(--color-accent);
   animation: textColor ease-in-out 1.5s infinite running;
 }
-#app main section.section--about .cont .img-brain {
+#app .wrap main section.section--about .cont .img-brain {
   width: 30%;
   min-width: 400px;
   height: 40%;
@@ -226,23 +307,23 @@
   border-radius: 15px;
   transform: translate(-50%, -50%);
 }
-#app main section.section--about .cont .img-brain img {
+#app .wrap main section.section--about .cont .img-brain img {
   border-radius: 15px;
   width: 100%;
   height: 100%;
   mix-blend-mode: darken;
   object-fit: cover;
 }
-#app main section.section--about .cont .img-brain img.overlay {
+#app .wrap main section.section--about .cont .img-brain img.overlay {
   position: absolute;
   inset: 0;
   mix-blend-mode: overlay;
 }
-#app main section.section--about .cont .img-brain ul {
+#app .wrap main section.section--about .cont .img-brain ul {
   position: absolute;
   inset: 0 0;
 }
-#app main section.section--about .cont .img-brain ul li {
+#app .wrap main section.section--about .cont .img-brain ul li {
   position: absolute;
   width: auto;
   min-width: fit-content;
@@ -254,47 +335,47 @@
   backdrop-filter: blur(10px);
   cursor: pointer;
 }
-#app main section.section--about .cont .img-brain ul li strong span {
+#app .wrap main section.section--about .cont .img-brain ul li strong span {
   margin-left: 12px;
 }
-#app main section.section--about .cont .img-brain ul li strong span::after {
+#app .wrap main section.section--about .cont .img-brain ul li strong span::after {
   content: "+";
 }
-#app main section.section--about .cont .img-brain ul li p {
+#app .wrap main section.section--about .cont .img-brain ul li p {
   overflow: hidden;
   width: 0;
   max-height: 0;
   font-size: 18px;
   transition: all 0.3s linear;
 }
-#app main section.section--about .cont .img-brain ul li:hover {
+#app .wrap main section.section--about .cont .img-brain ul li:hover {
   width: 80%;
   box-shadow: 2px 2px 10px var(--color-box);
   background: rgba(255, 255, 255, 0.6);
   z-index: 20;
 }
-#app main section.section--about .cont .img-brain ul li:hover strong span::after {
+#app .wrap main section.section--about .cont .img-brain ul li:hover strong span::after {
   content: "-";
 }
-#app main section.section--about .cont .img-brain ul li:hover p {
+#app .wrap main section.section--about .cont .img-brain ul li:hover p {
   width: fit-content;
   max-height: fit-content;
   display: flex;
   margin-top: 20px;
 }
-#app main section.section--about .cont .img-brain ul li:nth-of-type(1) {
+#app .wrap main section.section--about .cont .img-brain ul li:nth-of-type(1) {
   top: -5%;
   left: -40%;
 }
-#app main section.section--about .cont .img-brain ul li:nth-of-type(2) {
+#app .wrap main section.section--about .cont .img-brain ul li:nth-of-type(2) {
   top: 25%;
   left: -60%;
 }
-#app main section.section--about .cont .img-brain ul li:nth-of-type(3) {
+#app .wrap main section.section--about .cont .img-brain ul li:nth-of-type(3) {
   top: 55%;
   left: -50%;
 }
-#app main section.section--about .cont .img-brain ul li:nth-of-type(4) {
+#app .wrap main section.section--about .cont .img-brain ul li:nth-of-type(4) {
   top: 85%;
   left: -30%;
 }
@@ -305,5 +386,54 @@
   }
   80% {
     width: 100%;
+  }
+}
+@keyframes bulb {
+  0% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+    z-index: -100;
+  }
+}
+@keyframes bulb1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bgChange {
+  0% {
+    background-color: #2222222e;
+  }
+  100% {
+    background-color: #fff;
+  }
+}
+@keyframes bgChange1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.03);
+  }
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
