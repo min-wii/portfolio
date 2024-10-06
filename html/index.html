@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio 2024</title>
     <link rel="stylesheet" href="/assets/css/import.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="/assets/js/dist/custom.dev.js" defer></script>
 </head>
 
 <body>
-    <div id="app" class="loading">
-        <div id="loader" class="background">
+    <div id="app">
+        <div id="loader" class="loading">
+            <div class="title">Portfolio</div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 196">
                 <g class="bulb">
                     <path class="bulb__body"
@@ -76,24 +78,17 @@
                 </nav>
             </header>
             <main>
-                <h1>
-                    Portfolio
-                </h1>
                 <section id="about" class="section section--about">
                     <div class="inner">
                         <h2 class="sec__tit">1. About Me</h2>
                         <div class="cont">
-                            <p class="intro">
-                                안녕하세요, 저는 <span>퍼블리셔 민</span>입니다. <br>웹의 시각적 요소와 사용자 경험을 중요하게 생각하며, 복잡한 기능을 단순하고 직관적인
-                                인터페이스로
-                                구현하는 데에 큰 흥미를 가지고 있습니다. <br>사용자에게 가치를 제공하는 인터랙티브한 웹 애플리케이션을 만들기 위해 끊임없이 학습하고, 최신 기술을
-                                적극적으로
-                                습득하고 있습니다. <br>Vue.js를 활용한 프로젝트 경험을 쌓고 있으며, 향후에는 더 깊이 있는 기술적 성장을 목표로 삼고 있습니다. <br>창의적 문제
-                                해결과
-                                협업을 통해 실질적인 가치를 창출하는 개발자가 되고자 합니다.
+                            <p class="about__intro">
+                                안녕하세요, 끊임없이 노력하는 웹 퍼블리셔 민입니다.<br>
+                                시멘틱 마크업과 SEO, JS를 활용한 웹 인터렉션 등
+                                다양한 퍼블리싱 기술에 많은 관심을 갖고 있습니다.
                             </p>
-                            <div class="img-brain">
-                                <img src="/assets/images/b1.gif" alt="">
+                            <div class="about__figure">
+                                <img src="/assets/images/background.gif" alt="">
                                 <ul>
                                     <li>
                                         <strong>창의적인 아이디어 발상<span></span></strong>
@@ -131,20 +126,47 @@
                             </div>
                         </div>
                     </div>
-
                 </section>
                 <section id="skills" class="section section--skills">
                     <div class="inner">
                         <h2 class="sec__tit">2. Skills</h2>
                         <div class="cont">
-                            <div class="cont__top">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </p>
+                            <div class="skills__list">
+                                <h3>핵심 기술</h3>
+                                <ul>
+                                    <li>
+                                        <strong>Languages & Markup:</strong> HTML5, CSS3, JavaScript
+                                        <span>HTML5, CSS3, JavaScript를 활용하여 구조적이고 반응형 웹 페이지를 제작합니다.</span>
+                                    </li>
+                                    <li>
+                                        <strong>Styling & Preprocessors:</strong> Scss
+                                        <span>Scss를 이용해 확장성과 유지보수가 용이한 스타일링을 구현합니다.</span>
+                                    </li>
+                                    <li>
+                                        <strong>Version Control:</strong> Git
+                                        <span>
+                                            Git을 활용한 버전 관리로 효율적인 협업과 안정적인 코드 베이스를 유지합니다.
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <strong>Design Tools:</strong> Figma, Adobe XD
+                                    </li>
+                                    <li>
+                                        <strong>SEO:</strong> Semantic HTML
+                                        <span>의미론적 HTML 구조를 사용해 검색 엔진 최적화(SEO)와 웹 접근성을 개선합니다.</span>
+                                    </li>
+                                </ul>
+                                <h3>학습 중인 기술</h3>
+                                <ul>
+                                    <li>
+                                        Vue, React:<span> 컴포넌트 기반 웹 애플리케이션 개발을 학습 중입니다.</span>
+                                    </li>
+                                    <li>
+                                        WCAG, ARIA:<span> 웹 접근성과 보조 기술 사용자를 위한 인터랙티브 요소 개선을 학습 중입니다.</span>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="cont__bot">
-                                <img src="" alt="">
-                            </div>
+                            <div id="skillsChart" class="skills__chart"></div>
                         </div>
                     </div>
 
@@ -153,13 +175,102 @@
                     <div class="inner">
                         <h2 class="sec__tit">3. projects</h2>
                         <div class="cont">
-                            <div class="cont__left">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                </p>
-                            </div>
-                            <div class="cont__right">
-                                <img src="" alt="">
+                            <div class="projects__list">
+                                <div class="list__inner">
+                                    <h3>대표 프로젝트</h3>
+                                    <div class="list__featured">
+                                        <div>
+                                            <div class="thumbnail"><img src="/assets/images/work-1.png"
+                                                    alt="자사 장비관리시스템">
+                                                <div class="overlay"><time datetime="2024.09.01">24.09.01</time>~<time
+                                                        datetime="2024.09.30">24.09.30</time></div>
+                                            </div>
+                                            <h4>장비 관리 시스템</h4>
+                                            <p>
+                                                <span aria-label="html">HTML5</span><span
+                                                    aria-label="css">css3</span><span
+                                                    aria-label="js">javaScript</span><span
+                                                    aria-label="scss">SCSS</span><span
+                                                    aria-label="library">ECharts</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="thumbnail"><img src="/assets/images/work-2.png" alt="자사 ERP시스템">
+                                                <div class="overlay"><time datetime="2024.09.01">24.09.01</time>~<time
+                                                        datetime="2024.09.30">24.09.30</time></div>
+                                            </div>
+                                            <h4>ERP 시스템</h4>
+                                            <p>
+                                                <span aria-label="html">HTML5</span><span
+                                                    aria-label="css">css3</span><span
+                                                    aria-label="js">javaScript</span><span aria-label="scss">SCSS</span>
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <div class="thumbnail"><img src="/assets/images/work-3.png"
+                                                    alt="ing 브랜드 사이트">
+                                                <div class="overlay">
+                                                    <time datetime="2024.09.01">24.09.01</time>~<time
+                                                        datetime="2024.09.30">24.09.30</time>
+                                                </div>
+                                            </div>
+                                            <h4>ING 브랜드 사이트</h4>
+                                            <p>
+                                                <span aria-label="html">HTML5</span><span
+                                                    aria-label="css">css3</span><span
+                                                    aria-label="js">javaScript</span><span aria-label="scss">SCSS</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="list__inner">
+                                    <h3>연도별 프로젝트 히스토리</h3>
+                                    <div class="list__history">
+                                        <div>
+                                            <h4>2024</h4>
+                                            <ol>
+                                                <li><time datetime="2024.09">09</time>: 장비 관리 시스템</li>
+                                                <li><time datetime="2024.09">09</time>: ERP 시스템</li>
+                                                <li><time datetime="2024.09">09</time>: ROXi 패널 유지보수</li>
+                                                <li><time datetime="2024.09">09</time>: ROYi 관제 시스템 유지보수</li>
+                                                <li><time datetime="2024.09">09</time>: ING 브랜드 사이트</li>
+                                                <li><time datetime="2024.09">09</time>: LIDRO 리뉴얼 베타버전</li>
+                                                <li><time datetime="2024.08">08</time>: 모노브레인 외주 작업</li>
+                                                <li><time datetime="2024.04">04</time>: ORM 외주 작업</li>
+                                            </ol>
+                                        </div>
+                                        <div>
+                                            <h4>2023</h4>
+                                            <ol>
+                                                <li><time datetime="2023.08">08</time>: 삼성물산 비딩 시안 작업</li>
+                                                <li><time datetime="2023.07">07</time>: FA&Company 브랜드 사이트 리뉴얼</li>
+                                                <li><time datetime="2023.07">07</time>: ORM과 협업 프로젝트</li>
+                                                <li><time datetime="2023.01">01</time>~<time
+                                                        datetime="2023.12">12</time>:
+                                                    HANSSEM 유지 보수</li>
+                                                <li><time datetime="2023.01">01</time>~<time
+                                                        datetime="2023.12">12</time>:
+                                                    HANSSEM 월 기획전 작업</li>
+                                                <li><time datetime="2023.01">01</time>~<time
+                                                        datetime="2023.12">12</time>:
+                                                    HANSSEM 이벤트 기획전 작업</li>
+                                                <li><time datetime="2023.01">01</time>~<time
+                                                        datetime="2023.12">12</time>:
+                                                    LAB PARTNERS 유지보수</li>
+
+                                            </ol>
+                                        </div>
+                                        <div>
+                                            <h4>2022</h4>
+                                            <ol>
+                                                <li><time datetime="2022.04">04</time>~<time
+                                                        datetime="2022.12">12</time>:
+                                                    HANSSEM 사이트 유지 보수</li>
+                                                <li><time datetime="2022.02">02</time>: 연세 아이티 미래교육원 수원점 사이트 리뉴얼</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -181,7 +292,7 @@
                     </div>
 
                 </section>
-                <section id="contact" class="section section--contact">
+                <section id="contact" class="section section__contact">
                     <div class="inner">
                         <h2 class="sec__tit">5. contact</h2>
                         <div class="cont">
