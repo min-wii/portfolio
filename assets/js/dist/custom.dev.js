@@ -64,7 +64,8 @@ function drawChart() {
     // title: 'Skills',
     pieHole: 0.4,
     pieSliceTextStyle: {
-      color: '#222'
+      color: '#fff',
+      fontSize: 24
     },
     legend: 'none',
     chartArea: {
