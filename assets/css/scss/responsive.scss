@@ -1,0 +1,284 @@
+  /* 노트북 (해상도 1024px ~ 1279px) */
+  @media all and (max-width: 1279px) {
+    html{
+      font-size: 8px;
+    }
+    #app {
+      .wrap {
+        main {
+          section {
+            &.section--about {
+              .cont {
+                .about__intro {
+                  z-index: 10;
+                }
+
+                .about__figure {
+                  width: 100%;
+                  height: 100%;
+                  min-width: auto;
+                  min-height: auto;
+                  inset: 0;
+                  transform: translate(0, 0);
+
+                  img {
+                    width: 50%;
+                    height: 50%;
+                    position: absolute;
+                    left: 50%;
+                    top: 40%;
+                    transform: translateX(-50%);
+                  }
+
+                  ul {
+                    display: flex;
+                    flex-direction: column;
+                    top: 40%;
+                    gap: 1%;
+
+                    li {
+                      position: relative;
+                      inset: 0 0 !important;
+                      padding: 20px 40px;
+                      box-shadow: none;
+                      border-radius: 0;
+                      border: 1px solid var(--color-border-lighter);
+
+                      &:hover {
+                        background: none;
+                        box-shadow: none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            &.section--skills{
+              .cont{
+                .skills__list{
+                  ul{
+                    display:flex;
+                    flex-direction: column;
+                    gap:1.2rem;
+                    li{
+                      color:var(--color-primary);
+                      strong{
+                        color:var(--color-text-dark)
+                      }
+                      span{
+                        display:none;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  /* 테블릿 (해상도 768px ~ 1023px) */
+  @media all and (max-width: 1023px) {
+    html{
+      font-size: 7px;
+    }
+    #app {
+      .wrap {
+        main {
+          section {
+            &.section--skills{
+              .cont{
+                .skills__list{
+                  width:100%;
+                  ul{
+                    gap:0;
+                  }
+                }
+                .skills__chart{
+                  display:none;
+                }
+              }
+            }
+            &.section--projects{
+              .projects__list{
+                .list__inner{
+                  .list__featured{
+                    div{
+                      p{
+                        flex-wrap: wrap;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+  
+  }
+
+  /* 모바일 가로 (해상도 480px ~ 767px) */
+  @media all  and (max-width: 767px) {
+  html{
+    font-size:6px;
+  }
+  #app {
+    .wrap {
+      header{
+        display:none;
+        max-width: none;
+        width:100vw;
+        position:absolute;
+        border-radius:0;
+        justify-content: center;
+        &.hidden{
+          animation:slideout 0.3s cubic-bezier(0.52, 0.02, 0.44, 1.01);
+        }
+        &.active{
+          animation-delay:0s;
+        }
+      }
+      .mobile{
+        display:flex;
+        align-items: center;
+        justify-content: flex-end;
+        position:fixed;
+        width:100%;
+        height:10%;
+        padding:4rem;
+        inset:0 0;
+        z-index: 100;
+        animation: slidedown 0.3s cubic-bezier(0.52, 0.02, 0.44, 1.01) backwards;
+        animation-delay:0.5s;
+        .toggle-btn{
+          width:5rem;
+          height:5rem;
+          display:flex;
+          align-items: center;
+          position:relative;
+          overflow:hidden;
+          cursor:pointer;
+          span{
+            transition:all 0.3s cubic-bezier(0.41,-0.43, 0.72, 1.35);
+            display:inline-flex;
+            width: 100%;
+            height:4px;
+            background: var(--color-box);
+            &::before, &::after{
+              transition:all 0.3s cubic-bezier(0.41,-0.43, 0.72, 1.35);
+              content:'';
+              position:absolute;
+              width:100%;
+              height:4px;
+              background: var(--color-box);
+            }
+            &::before{
+              top:0;
+            }
+            &::after{
+              bottom:0;
+            }
+          }
+          &:hover{
+            span{
+              width:0;
+               background: transparent;
+              &::before, &::after{
+                transform-origin: left center;
+                width:140%;
+              }
+              &::before{
+                transform: rotate(45deg);
+                top:-8%;
+              }
+              &::after{
+                transform: rotate(-45deg);
+                bottom:-8%;
+              }
+            }
+          }
+
+        }
+      }
+      main {
+        section {
+          width:100vw;
+          height:calc(100vh - 10% + 4rem);
+          bottom:0;
+            .inner{
+              gap:3%;
+            }
+            &.section--skills{
+              .cont{
+                flex-direction: column;
+                justify-content: space-around;
+                gap:0;
+                .skills__list{
+                  width:100%;
+                  ul{
+                    gap:0;
+                    li{
+                      display:block;
+                    }
+                  }
+                }
+                .skills__chart{
+                  display:block;
+                  width:100%;
+                  height:auto;
+                }
+              }
+            }
+            &.section--projects{
+              .projects__list{
+                flex-direction: row;
+                gap:5rem;
+                .list__inner{
+                  flex:1;
+                  width:50%;
+                  height:calc(100% - 6rem);
+                  h3{
+                    margin-bottom:1.5rem;
+                  }
+                  .list__featured{
+                    height:100%;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    gap:2rem;
+                    div{
+                      width:100%;
+                      .thumbnail{
+                        width:100%;
+                      }
+                      p{
+                        flex-wrap: wrap;
+                      }
+                    }
+                  }
+                  .list__history{
+                    flex-direction: column;
+                    gap:2rem;
+                    div{
+                      width:100%;
+                    }
+                  }
+                }
+              }
+            
+          }
+        }
+      }
+    }
+  }
+  }
+
+  // /* 모바일 세로 (해상도 ~ 479px) */
+  // @media all and (max-width: 479px) {
+  //   /* 모바일 세로 스타일 */
+  // }

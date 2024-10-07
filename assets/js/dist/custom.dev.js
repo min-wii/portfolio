@@ -23,6 +23,16 @@ var resetActiveClasses = function resetActiveClasses() {
 };
 
 var handleNavButtonClick = function handleNavButtonClick(indx) {
+  if (matchMedia('max-width:767px')) {
+    var _header = document.querySelector('header');
+
+    _header.classList.add('hidden');
+
+    setTimeout(function () {
+      _header.classList.remove('active');
+    }, 200);
+  }
+
   resetActiveClasses();
   navBtns[indx].classList.add('active');
   sections[indx].classList.add('active');
@@ -30,6 +40,12 @@ var handleNavButtonClick = function handleNavButtonClick(indx) {
 
 resetBtn.addEventListener('click', function () {
   resetActiveClasses();
+
+  if (matchMedia('max-width:767px')) {
+    var _header2 = document.querySelector('header');
+
+    _header2.classList.remove('active');
+  }
 });
 navBtns.forEach(function (btn, indx) {
   btn.addEventListener('click', function () {
@@ -37,38 +53,40 @@ navBtns.forEach(function (btn, indx) {
   });
 }); // 프로젝트 차트
 
-google.charts.load('current', {
-  packages: ['corechart', 'bar']
+google.charts.load("current", {
+  packages: ["corechart"]
 });
 google.charts.setOnLoadCallback(drawChart);
 
 function drawChart() {
-  var data = new google.visualization.DataTable();
-  data.addColumn('string', 'Skills');
-  data.addColumn('number', 'Proficiency (%)');
-  data.addRows([['HTML', 100], ['CSS', 90], ['SCSS', 90], ['JS', 80], ['jQuery', 70], ['React', 50], ['Vue', 50]]);
+  var data = google.visualization.arrayToDataTable([['Skill', 'Proficiency (%)'], ['HTML', 100], ['CSS', 90], ['SCSS', 90], ['JS', 80], ['jQuery', 70], ['React', 40], ['Vue', 30]]);
   var options = {
-    legend: {
-      position: 'none'
+    // title: 'Skills',
+    pieHole: 0.4,
+    pieSliceTextStyle: {
+      color: '#222'
     },
-    hAxis: {
-      minValue: 0,
-      maxValue: 100
+    legend: 'none',
+    chartArea: {
+      width: '100%',
+      height: '100%'
     },
-    bar: {
-      groupWidth: "90%"
-    },
-    colors: ['#4B7F93']
-  }; // 차트를 그릴 div 요소의 크기를 가져옴
+    colors: ['#dd4b25', '#146faf', '#c66394', '#f6aa3f', '#0868ac', '#5ed3f3', '#3fb17f']
+  }; //       var chartContainer = document.getElementById('skillsChart');
+  //     var containerWidth = chartContainer.clientWidth; 
+  //     var containerHeight = chartContainer.clientHeight; 
+  //   options.width = containerWidth; 
+  //       options.height = containerHeight; 
 
-  var chartContainer = document.getElementById('skillsChart');
-  var containerWidth = chartContainer.clientWidth;
-  var containerHeight = chartContainer.clientHeight; // 옵션에 부모 div의 크기를 설정
-
-  options.width = containerWidth;
-  options.height = containerHeight;
-  var chart = new google.charts.Bar(chartContainer);
-  chart.draw(data, google.charts.Bar.convertOptions(options));
+  var chart = new google.visualization.PieChart(document.getElementById('skillsChart'));
+  chart.draw(data, options);
 }
 
-window.addEventListener('resize', drawChart);
+window.addEventListener('resize', drawChart); //모바일 토글 메뉴
+
+var toggleBtn = document.querySelector('.toggle-btn');
+var header = document.querySelector('header');
+toggleBtn.addEventListener('click', function (e) {
+  header.classList.remove('hidden');
+  header.classList.toggle('active');
+});

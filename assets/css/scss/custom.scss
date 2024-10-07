@@ -1,6 +1,7 @@
 :root {
     --color-background: #FFFFFF;
     --color-box: rgb(31, 42, 68);
+    --color-border-lighter: #E8E8E8;
     --color-border-light: #BACFD9;
     --color-border-dark: #222;
     --color-primary: #1B2A3D;
@@ -10,7 +11,9 @@
     --color-text-light: #FFFFFF;
 }
 
-
+html{
+    font-size: 10px;
+}
 
 #app {
 
@@ -28,7 +31,7 @@
             position:absolute;
             inset:50% auto auto 50%;
             transform:translate(-50%, 0%);
-            font-size:50px;
+            font-size:5rem;
             font-weight: 900;
             color:#ff6a00;
             mix-blend-mode: difference;
@@ -37,8 +40,8 @@
             animation-delay:0.3s;
         }
         svg{
-            width:196px;
-            height:196px;
+            width:19.6rem;
+            height:19.6rem;
             animation:bulb 0.3s cubic-bezier(0.64,-0.11, 0.43, 1.51);
             .bulb{
                 .bulb__body{
@@ -117,18 +120,17 @@
         font-family: 'Pretendard';
 
         header {
-            animation:slidein 0.5s cubic-bezier(0.52, 0.02, 0.44, 1.01) backwards;
-            animation-delay:1.85s;
+           
             max-width: calc(100vw - 85%);
             min-width: fit-content;
             height: 100vh;
-            padding: 40px 20px;
-            border-radius: 0px 25px 0px 0px;
+            padding: 4rem 2rem;
+            border-radius: 0px 2.5rem 0px 0px;
             background: var(--color-box);
             filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
             display: flex;
             flex-direction: column;
-            gap:60px;
+            gap:6rem;
             z-index: 200;
     
             .profile {
@@ -138,8 +140,8 @@
                 align-items: center;
     
                 .frame {
-                    width: 200px;
-                    height: 200px;
+                    width: 20rem;
+                    height: 20rem;
                     border-radius: 50%;
                     border: 5px solid var(--color-border-light);
                     overflow: hidden;
@@ -153,7 +155,7 @@
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
-                        object-position: 15px center;
+                        object-position: 1.5rem center;
                     }
                 }
             }
@@ -161,7 +163,7 @@
             ul[role='menu'] {
                 display: flex;
                 flex-direction: column;
-                gap: 20px;
+                gap: 2rem;
     
                 li {
                     width: 100%;
@@ -172,11 +174,11 @@
                     button {
                         min-width: max-content;
                         width: 85%;
-                        padding: 10px 30px;
+                        padding: 1rem 3rem;
                         height: 60%;
-                        border-radius: 25px;
+                        border-radius: 2.5rem;
                         font-weight: 700;
-                        font-size: 26px;
+                        font-size: 2.6rem;
                         background: var(--color-box);
                         color: var(--color-text-light);
                         letter-spacing: 2px;
@@ -206,8 +208,16 @@
                     }
                 }
             }
+            &.active{
+                display:flex;
+                animation:slidein 0.5s cubic-bezier(0.52, 0.02, 0.44, 1.01) backwards;
+                animation-delay:1.85s;
+            }
         }
-    
+        
+        .toggle-btn{
+            display:none;
+        }
         main {
             width: 100%;
             position: relative;
@@ -218,7 +228,7 @@
     
             h1 {
                 color: var(--color-accent);
-                font-size: 80px;
+                font-size: 8rem;
                 background-clip: text;
                 -webkit-background-clip: text;
                 mix-blend-mode: multiply;
@@ -249,20 +259,20 @@
                     width:100%;
                     height: 100%;
                     background: rgba(255, 255, 255, 0.4);
-                    padding: 40px;
+                    padding: 4rem;
                     display:flex;
                     flex-direction: column;
                     gap:5%;
                     .sec__tit {
                         text-transform: uppercase;
-                        font-size: 40px;
+                        font-size: 4rem;
                         color: var(--color-accent);
                     }
         
                     .cont {
                         width: 100%;
-                        height: calc(95% - 40px);
-                        font-size: 24px;
+                        height: calc(95% - 4rem);
+                        font-size: 2.4rem;
                         font-weight: 700;
                         line-height: 1.5;
                         display:flex;
@@ -277,21 +287,21 @@
     
                         .about__intro {
                             position:relative;
-                            font-size: 24px;
+                            font-size: 2.4rem;
                         }
     
                         .about__figure {
                             width: 30%;
-                            min-width: 400px;
+                            min-width: 40rem;
                             height: 40%;
-                            min-height: 400px;
+                            min-height: 40rem;
                             position: absolute;
                             inset:60%;
-                            border-radius: 15px;
+                            border-radius: 1.5rem;
                             transform: translate(-50%, -50%);
     
                             img {
-                                border-radius: 15px;
+                                border-radius: 1.5rem;
                                 width: 100%;
                                 height: 100%;
                                 mix-blend-mode: darken;
@@ -307,10 +317,10 @@
                                     width: auto;
                                     min-width: fit-content;
                                     height: auto;
-                                    border-radius: 10px;
-                                    padding: 20px;
+                                    border-radius: 1rem;
+                                    padding: 2rem;
                                     box-shadow: 2px 2px 8px var(--color-box);
-                                    transform: translateY(-50%);
+                                    // transform: translateY(-50%);
                                     transition: all 0.3s linear;
                                     backdrop-filter: blur(10px);
                                   
@@ -318,7 +328,7 @@
     
                                     strong {
                                         span {
-                                            margin-left: 12px;
+                                            margin-left: 1.2rem;
     
                                             &::after {
                                                 content: "+"
@@ -330,14 +340,14 @@
                                         overflow: hidden;
                                         width: 0;
                                         max-height: 0;
-                                        font-size: 18px;
+                                        font-size: 1.8rem;
                                         transition: all 0.3s linear;
                                     }
     
                                     &:hover {
                                       
                                         width: 80%;
-                                        box-shadow: 2px 2px 10px var(--color-box);
+                                        box-shadow: 2px 2px 1rem var(--color-box);
                                         background: rgba(255, 255, 255, 0.9);
                                     
                                         z-index: 20;
@@ -351,7 +361,7 @@
                                             width: fit-content;
                                             max-height: fit-content;
                                             display: flex;
-                                            margin-top: 20px;
+                                            margin-top: 2rem;
                                         }
                                     }
     
@@ -393,7 +403,7 @@
                         .skills__list{
                             width:50%;
                             h3{
-                                font-size: 26px;
+                                font-size: 2.6rem;
                                 color:var(--color-accent);
                             }
                             ul{
@@ -401,17 +411,17 @@
                                 flex-direction: column;
                                 margin-bottom:5%;
                                 li{
-                                    font-size: 20px;
+                                    font-size: 2rem;
                                     display:flex;
                                     flex-direction: column;
                                   
                                     strong{
-                                        font-size: 24px;
+                                        font-size: 2.4rem;
                                         font-weight: 700;
                                     }
                                     span{
                                         color:#aaa;
-                                        font-size: 18px;
+                                        font-size: 1.8rem;
                                     }
                                 }
                             }
@@ -432,13 +442,13 @@
                         display:flex;
                         flex-direction: column;
                         justify-content: space-evenly;
-                        gap:24px;
+                        gap:2.4rem;
                         .list__inner{
                             h3{
-                                font-size: 24px;
+                                font-size: 2.4rem;
                             }
                             .list__featured{
-                                margin-top:10px;
+                                margin-top:1rem;
                                 width:100%;
                                 display:flex;
                                 justify-content: space-between;
@@ -446,14 +456,15 @@
                                     display:flex;
                                     flex-direction: column;
                                     justify-content: space-evenly;
-                                    width: calc(100% / 3 - 20px);
+                                    width: calc(100% / 3 - 2rem);
+                                    gap:1rem;
                                     .thumbnail{
                                         position:relative;
                                         width:70%;
                                         height:70%;
                                         overflow:hidden;
                                         cursor:pointer;
-                                        border:1px solid var(--color-border-dark);
+                                        border:1px solid var(--color-border-lighter);
                                        
                                         img{
                                             transform-origin: center;
@@ -477,7 +488,7 @@
                                             background: rgba(31, 42, 68,0.4);
                                             backdrop-filter: blur(3px);
                                             time{
-                                                font-size: 18px;
+                                                font-size: 1.8rem;
                                             }
                                           transition:transform 0.3s ease-in-out;
                                         }
@@ -492,14 +503,14 @@
                                         }
                                     }
                                     h4{
-                                        font-size: 20px;
+                                        font-size: 2rem;
                                         color:var(--color-text-dark);
                                     }
                                     p{
                                         display:inline-flex;
                                         gap:4px;
                                         span{
-                                            font-size: 14px;
+                                            font-size: 1.4rem;
                                             padding:2px 6px;
                                             border-radius: 5px;
                                             color:var(--color-text-light);
@@ -525,18 +536,18 @@
                                 }
                             }
                            .list__history{
-                            margin-top:10px;
+                            margin-top:1rem;
                             width:100%;
                             display:flex;
                             justify-content: space-between;
                             div{
-                                width:calc(100% / 3 - 20px);
-                                font-size: 18px;
+                                width:calc(100% / 3 - 2rem);
+                                font-size: 1.8rem;
                                 h4{
-                                    font-size: 20px;
+                                    font-size: 2rem;
                                 }
                                 ol{
-                                    margin-top:20px;
+                                    margin-top:2rem;
                                 }
                             }
                            }
@@ -555,13 +566,13 @@
     0%{
         opacity:0;
         inset:100% auto auto 50%;
-        transform:translate(-50%, calc(-50% - 100px));
+        transform:translate(-50%, calc(-50% - 10rem));
         
     }
     50%{
         opacity:1;
         inset:50% auto auto 50%;
-        transform:translate(-50%, calc(-50% + 50px));
+        transform:translate(-50%, calc(-50% + 5rem));
     }
     100%{
         opacity:1;
@@ -589,7 +600,7 @@
     }
     10%{
         stroke:rgb(255, 230, 0);
-        stroke-width:10px;
+        stroke-width:1rem;
         stroke-linecap: butt;
     }
     100%{
@@ -628,5 +639,22 @@
     }
     100%{
         transform:translateX(0);
+    }
+}
+@keyframes slidedown{
+    0%{
+       transform:translateY(-100%);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes slideout{
+    0%{
+       transform:translateX(0);
+    }
+    100%{
+        transform:translateX(-100%);
     }
 }
