@@ -592,6 +592,18 @@ html{
                         }
                     }
                 }
+                &.section--contact{
+                    .inner{
+                        .cont{
+                            flex-direction: column;
+                        gap:2rem;
+                            a{
+                            color:var(--color-text-dark)
+                        }
+                        }
+
+                    }
+                }
             }
         }
         

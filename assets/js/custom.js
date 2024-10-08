@@ -68,7 +68,7 @@ function drawChart() {
   ]);
 
   var options = {
-    title: 'Skills',
+    // title: 'Skills',
     pieHole: 0.4,
     pieSliceTextStyle:{
         color:'#fff',

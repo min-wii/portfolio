@@ -61,7 +61,7 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
   var data = google.visualization.arrayToDataTable([['Skill', 'Proficiency (%)'], ['HTML', 100], ['CSS', 90], ['SCSS', 90], ['JS', 80], ['jQuery', 70], ['React', 40], ['Vue', 30]]);
   var options = {
-    title: 'Skills',
+    // title: 'Skills',
     pieHole: 0.4,
     pieSliceTextStyle: {
       color: '#fff',

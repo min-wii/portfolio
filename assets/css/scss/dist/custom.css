@@ -509,6 +509,13 @@ html {
 #app .wrap main section.section--experience .cont ul li:last-child::after {
   display: none;
 }
+#app .wrap main section.section--contact .inner .cont {
+  flex-direction: column;
+  gap: 2rem;
+}
+#app .wrap main section.section--contact .inner .cont a {
+  color: var(--color-text-dark);
+}
 
 @keyframes introBounce {
   0% {
