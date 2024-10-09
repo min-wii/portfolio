@@ -325,7 +325,7 @@ html {
   width: 50%;
 }
 #app .wrap main section.section--skills .cont .skills__list h3 {
-  font-size: 2.6rem;
+  font-size: 2.8rem;
   color: var(--color-accent);
 }
 #app .wrap main section.section--skills .cont .skills__list ul {
@@ -361,7 +361,7 @@ html {
   gap: 2.4rem;
 }
 #app .wrap main section.section--projects .projects__list .list__inner h3 {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
 }
 #app .wrap main section.section--projects .projects__list .list__inner .list__featured {
   margin-top: 1rem;
