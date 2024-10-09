@@ -206,6 +206,9 @@
     width: 100%;
     height: 90%;
   }
+  #app .wrap main section.section--projects .projects__list .list__inner .list__featured div .thumbnail .overlay time {
+    font-size: 2.8rem;
+  }
   #app .wrap main section.section--projects .projects__list .list__inner .list__featured div p {
     flex-wrap: wrap;
   }
