@@ -62,15 +62,15 @@ function drawChart() {
   var data = google.visualization.arrayToDataTable([['Skill', 'Proficiency (%)'], ['HTML', 100], ['CSS', 90], ['SCSS', 90], ['JS', 80], ['jQuery', 70], ['React', 40], ['Vue', 30]]);
   var options = {
     // title: 'Skills',
-    pieHole: 0.4,
+    pieHole: 0.3,
     pieSliceTextStyle: {
       color: '#fff',
       fontSize: 16
     },
     legend: 'none',
     chartArea: {
-      width: '90%',
-      height: '90%',
+      width: '88%',
+      height: '88%',
       fontName: 'pretendard'
     },
     colors: ['#dd4b25', '#146faf', '#c66394', '#f6aa3f', '#0868ac', '#5ed3f3', '#3fb17f']
