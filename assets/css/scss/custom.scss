@@ -234,6 +234,7 @@ html{
                 height: 100vh;
                 left: -200%;
                 backdrop-filter: blur(8px);
+                -webkit-backdrop-filter: blur(8px);
                 transition: max-width 0.6s linear, left 0.6s linear;
                 display: flex;
     
@@ -311,6 +312,7 @@ html{
                                     // transform: translateY(-50%);
                                     transition: all 0.3s linear;
                                     backdrop-filter: blur(10px);
+                                    -webkit-backdrop-filter: blur(10px);
                                   
                                     cursor: pointer;
     
@@ -475,6 +477,7 @@ html{
                                             color:var(--color-text-light);
                                             background: rgba(31, 42, 68,0.4);
                                             backdrop-filter: blur(3px);
+                                            -webkit-backdrop-filter: blur(3px);
                                             time{
                                                 font-size: 1.8rem;
                                             }
