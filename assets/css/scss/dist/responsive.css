@@ -41,6 +41,7 @@
   #app .wrap main section.section--about .cont .about__figure ul li:hover {
     background: none;
     box-shadow: none;
+    width: 100%;
   }
   #app .wrap main section.section--skills .cont .skills__list ul {
     display: flex;
