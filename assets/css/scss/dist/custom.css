@@ -516,6 +516,16 @@ html {
 #app .wrap main section.section--contact .inner .cont a {
   color: var(--color-text-dark);
 }
+#app .wrap footer {
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  color: var(--color-text-light);
+  z-index: 300;
+  font-size: 1rem;
+}
 
 @keyframes introBounce {
   0% {

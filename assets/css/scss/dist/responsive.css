@@ -220,4 +220,12 @@
   #app .wrap main section.section--projects .projects__list .list__inner .list__history div {
     width: 100%;
   }
+  #app .wrap footer {
+    width: fit-content;
+    height: fit-content;
+    left: 50%;
+    bottom: 4rem;
+    transform: translateX(-50%);
+    font-size: 2rem;
+  }
 }
